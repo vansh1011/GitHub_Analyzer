@@ -190,6 +190,10 @@ Make sure to set the same environment variables (`HOST`, `USER`, etc.) on the pl
 
 ---
 
+> [POSTMAN_COLLECTION](https://documenter.getpostman.com/view/40998849/2sBXwntCRs)
+
+---
+
 ## Usage
 
 1. Enter a GitHub username in the search box and click **Find**
