@@ -132,7 +132,7 @@ export function Home() {
                     />
 
                     <button
-                        type="submit"
+                        type="button"
                         onClick={handleSubmit}
                         className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg font-semibold w-full sm:w-auto"
                     >
@@ -140,6 +140,7 @@ export function Home() {
                     </button>
 
                     <button
+                            type="button"
                         className="bg-amber-600 hover:bg-amber-800 px-5 py-2 rounded-lg font-semibold w-full sm:w-auto"
                         onClick={() => navigate('/analysis')}
                     >
@@ -147,6 +148,7 @@ export function Home() {
                     </button>
 
                     <button
+                        type="button"
                         onClick={() => navigate('/all')}
                         className="bg-amber-600 hover:bg-amber-800 px-5 py-2 rounded-lg font-semibold w-full sm:w-auto"
                     >
