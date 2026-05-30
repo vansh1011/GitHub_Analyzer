@@ -5,8 +5,7 @@ function Analysis() {
     const [username, setUsername] = useState("")
     const [oneuser, setOneuser] = useState({})
 
-    async function handleSubmit(e) {
-        e.preventDefault()
+    async function handleSubmit() {
 
         const data = { username }
 
@@ -28,15 +27,13 @@ function Analysis() {
 
             <div className="w-full max-w-xl">
 
-                
                 <div className="bg-[#0b1b3a]/70 backdrop-blur-md border border-blue-900/40 rounded-2xl shadow-2xl p-6">
 
                     <h1 className="text-2xl font-bold text-center mb-6 text-blue-300">
                         GitHub User Finder
                     </h1>
 
-                    
-                    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-6">
+                    <div className="flex flex-col sm:flex-row gap-3 mb-6">
 
                         <input
                             type="text"
@@ -48,14 +45,14 @@ function Analysis() {
 
                         <button
                             type="button"
+                            onClick={handleSubmit}
                             className="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 transition font-semibold"
                         >
                             Find
                         </button>
 
-                    </form>
+                    </div>
 
-                 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
 
                         <div className="bg-[#07152e] p-3 rounded-lg border border-blue-900/40">

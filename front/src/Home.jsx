@@ -18,8 +18,7 @@ export function Home() {
     const ChartRef = useRef(null)
     const chartInstance = useRef(null)
 
-    async function handleSubmit(e) {
-        e.preventDefault()
+    async function handleSubmit() {
 
         const result = await fetch(`https://api.github.com/users/${username}`)
         setData(await result.json())
@@ -121,7 +120,7 @@ export function Home() {
 
             <div className="flex-1">
 
-                <form className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8">
 
                     <input
                         type="text"
@@ -140,7 +139,7 @@ export function Home() {
                     </button>
 
                     <button
-                            type="button"
+                        type="button"
                         className="bg-amber-600 hover:bg-amber-800 px-5 py-2 rounded-lg font-semibold w-full sm:w-auto"
                         onClick={() => navigate('/analysis')}
                     >
@@ -155,7 +154,7 @@ export function Home() {
                         Find All
                     </button>
 
-                </form>
+                </div>
 
                 <div className="bg-gray-800 rounded-2xl p-4 md:p-5 shadow-lg space-y-2 mb-6">
 
