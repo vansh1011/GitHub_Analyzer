@@ -1,0 +1,107 @@
+{
+  "info": {
+    "name": "GitHub Analyzer API",
+    "description": "API collection for GitHub Analyzer project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://github-analyzer-mev2.onrender.com"
+      
+    }
+  ],
+  "item": [
+    {
+      "name": "Save User Analysis",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/save",
+          "host": ["{{base_url}}"],
+          "path": ["save"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"torvalds\",\n  \"followers\": 236000,\n  \"following\": 0,\n  \"public_repos\": 8,\n  \"total_stars\": 9500,\n  \"total_forks\": 2300,\n  \"top_language\": \"C\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "description": "Saves a GitHub user's analysis data to the database. Username must be unique."
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "{\n  \"message\": \"User Saved\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Find User Analysis",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/find",
+          "host": ["{{base_url}}"],
+          "path": ["find"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"torvalds\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "description": "Finds a specific GitHub user's saved analysis by username."
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"username\": \"torvalds\",\n      \"followers\": 236000,\n      \"following\": 0,\n      \"public_repos\": 8,\n      \"total_stars\": 9500,\n      \"total_forks\": 2300,\n      \"top_language\": \"C\",\n      \"created_at\": \"2024-01-01T00:00:00.000Z\"\n    }\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get All Analyses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/all",
+          "host": ["{{base_url}}"],
+          "path": ["all"]
+        },
+        "description": "Returns all saved GitHub user analyses from the database."
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "[\n  {\n    \"id\": 1,\n    \"username\": \"torvalds\",\n    \"followers\": 236000,\n    \"following\": 0,\n    \"public_repos\": 8,\n    \"total_stars\": 9500,\n    \"total_forks\": 2300,\n    \"top_language\": \"C\",\n    \"created_at\": \"2024-01-01T00:00:00.000Z\"\n  }\n]"
+        }
+      ]
+    }
+  ]
+}
