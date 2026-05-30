@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 
+
 function All() {
     const [data, setData] = useState([]);
+
+
 
     useEffect(() => {
         (async function call() {
             try {
-                const res = await fetch("http://localhost:8000/all");
+                const res = await fetch(`${import.meta.env.VITE_SERVER}/all`);
                 const json = await res.json();
                 setData(json);
             } catch (error) {

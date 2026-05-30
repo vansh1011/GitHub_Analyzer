@@ -107,7 +107,7 @@ export function Home() {
             top_language: top_language.current,
         }
 
-        await fetch("http://localhost:8000/save", {
+        await fetch(`${import.meta.env.VITE_SERVER}/save`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

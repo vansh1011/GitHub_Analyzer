@@ -10,7 +10,7 @@ function Analysis() {
 
         const data = { username }
 
-        const result = await fetch('http://localhost:8000/find', {
+        const result = await fetch(`${import.meta.env.VITE_SERVER}/find`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
